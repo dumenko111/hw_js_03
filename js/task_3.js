@@ -6,13 +6,9 @@
 // как свойства объекта в формате "имя": "кол-во задач".
 
 const findBestEmployee = function (employees) {
-    const keys = Object.keys(employees)
-    // const values = Object.values(employees)
-  for (const key of keys) {
-    // console.log(key)
-    const biggestTask = employees[key]
-    console.log(Math.max(biggestTask))
-  } 
+  const values = Object.values(employees)
+  console.log(Math.max(...values))
+  
 };
 // console.log(`${key}: ${user[key]}`)
 /*
