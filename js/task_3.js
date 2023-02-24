@@ -6,14 +6,15 @@
 // как свойства объекта в формате "имя": "кол-во задач".
 
 const findBestEmployee = function (employees) {
-  const values = Object.values(employees)
-  console.log(Math.max(...values))
-  
+  let emp = ''
+  for (let key in employees) 
+    if (!(employees[key] <= employees[emp])) 
+      emp = key
+    return emp
 };
-// console.log(`${key}: ${user[key]}`)
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
+
+
+
 console.log(
   findBestEmployee({
     ann: 29,
@@ -23,19 +24,19 @@ console.log(
   }),
 ); // lorence
 
-// console.log(
-//   findBestEmployee({
-//     poly: 12,
-//     mango: 17,
-//     ajax: 4,
-//   }),
-// ); // mango
+console.log(
+  findBestEmployee({
+    poly: 12,
+    mango: 17,
+    ajax: 4,
+  }),
+); // mango
 
-// console.log(
-//   findBestEmployee({
-//     lux: 147,
-//     david: 21,
-//     kiwi: 19,
-//     chelsy: 38,
-//   }),
-// ); // lux
+console.log(
+  findBestEmployee({
+    lux: 147,
+    david: 21,
+    kiwi: 19,
+    chelsy: 38,
+  }),
+); // lux
